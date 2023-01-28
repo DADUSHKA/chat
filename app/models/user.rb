@@ -3,7 +3,9 @@ require "digest/md5"
 class User < ApplicationRecord
   SALT = "my_super_cache".freeze
 
-  validates :email, presence: true, uniqueness: true
+  has_many :rooms, dependent: :destroy
+
+  validates :email, presence: true
 
   def email=(e)
     e = e.strip if e
