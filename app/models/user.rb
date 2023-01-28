@@ -4,6 +4,7 @@ class User < ApplicationRecord
   SALT = "my_super_cache".freeze
 
   has_many :rooms, dependent: :destroy
+  has_many :messages, -> { sorted }, dependent: :destroy
 
   validates :email, presence: true
 
