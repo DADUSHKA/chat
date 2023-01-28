@@ -5,6 +5,7 @@ ruby "3.0.1"
 
 gem "bootsnap", require: false
 gem "bootstrap", "~> 5.2.2"
+gem "hamlit-rails"
 gem "importmap-rails"
 gem "pg", "~> 1.1"
 gem "puma", "~> 5.0"

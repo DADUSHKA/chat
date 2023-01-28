@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  root "rooms#index"
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  resource :registrations, only: %i[new create]
+
+  resource :sessions, only: %i[new create destroy]
+
+  get 'sessions', to: 'sessions#destroy'
 end

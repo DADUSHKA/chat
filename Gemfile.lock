@@ -88,6 +88,15 @@ GEM
     ffi (1.15.5)
     globalid (1.1.0)
       activesupport (>= 5.0)
+    hamlit (3.0.3)
+      temple (>= 0.8.2)
+      thor
+      tilt
+    hamlit-rails (0.2.3)
+      actionpack (>= 4.0.1)
+      activesupport (>= 4.0.1)
+      hamlit (>= 1.2.0)
+      railties (>= 4.0.1)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     importmap-rails (1.1.5)
@@ -181,6 +190,7 @@ GEM
       sprockets (>= 3.0.0)
     stimulus-rails (1.2.1)
       railties (>= 6.0.0)
+    temple (0.10.0)
     thor (1.2.1)
     tilt (2.0.11)
     timeout (0.3.1)
@@ -207,6 +217,7 @@ DEPENDENCIES
   bootsnap
   bootstrap (~> 5.2.2)
   debug
+  hamlit-rails
   importmap-rails
   pg (~> 1.1)
   pry-rails

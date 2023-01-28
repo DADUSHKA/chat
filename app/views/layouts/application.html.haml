@@ -1,0 +1,33 @@
+!!!
+%html
+  %head
+    %meta{content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Chat
+    %meta{content: "width=device-width,initial-scale=1", name: "viewport"}/
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag "application", "data-turbo-track": "reload"
+    = javascript_importmap_tags
+  %body
+    %nav.navbar.navbar-expand-lg.navbar-light.bg-light
+      .container-fluid
+        #navbarRightAlignExample.collapse.navbar-collapse
+          %ul.navbar-nav.ms-auto.mb-2.mb-lg-0
+            - if user_signed_in?
+              %li.nav-item{:role => "presentation"}
+                %a= link_to '<button type="button">Log out</button>'.html_safe, sessions_path, method: :delete
+              %li.nav-item{:role => "presentation"}
+                %a= link_to '<button type="button">Home</button>'.html_safe, root_path
+            - else
+              %li.nav-item{:role => "presentation"}
+                %a= link_to '<button type="button">Log in</button>'.html_safe, new_sessions_path
+                %br/
+                %br/
+              %li.nav-item{:role => "presentation"}
+                %a= link_to '<button type="button">Registration</button>'.html_safe, new_registrations_path
+    #main-container.container-fluid
+      .container
+        .row
+          .col-9.content
+            %p#notice= notice
+            = yield
